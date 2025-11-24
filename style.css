@@ -36,6 +36,7 @@ header .container{display:flex;align-items:center;justify-content:space-between;
 /* Brand/logo styles */
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
 .brand-logo{width:36px;height:36px;display:block}
+.brand-monogram{display:none;width:36px;height:36px}
 .brand-text{font-weight:800;font-size:1.05rem;line-height:1}
 .brand-main{display:inline-block;color:transparent;background:linear-gradient(90deg,var(--accent-1),var(--accent-2));-webkit-background-clip:text;background-clip:text}
 .brand-sub{display:inline-block;font-weight:600;font-size:.92rem;opacity:0.95;margin-left:4px}
@@ -230,6 +231,11 @@ footer{padding:26px 0;background:linear-gradient(135deg,var(--brand-dark),#34495
     .stat{flex:1;min-width:0}
     .contact-grid{grid-template-columns:1fr 420px}
     .gallery{gap:18px}
+    /* Tablet: use compact monogram and single-color wordmark for cleaner header */
+    .brand-logo{display:none}
+    .brand-monogram{display:block}
+    .brand-main{background:none;color:var(--text-on-accent)}
+    .brand-text{font-size:1rem}
 }
 @media (max-width:480px){
     .hero h2{font-size:1.5rem}

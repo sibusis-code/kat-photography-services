@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="48" height="48">
+  <defs>
+    <linearGradient id="m" x1="0" x2="1">
+      <stop offset="0" stop-color="#667eea" />
+      <stop offset="1" stop-color="#764ba2" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="46" fill="#ffffff" opacity="0.06" />
+  <circle cx="50" cy="50" r="34" fill="url(#m)"/>
+  <text x="50%" y="55%" font-family="Segoe UI, Roboto, Arial" font-size="34" fill="#fff" font-weight="700" text-anchor="middle" alignment-baseline="middle">K</text>
+</svg>
