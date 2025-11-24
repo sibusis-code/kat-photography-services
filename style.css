@@ -60,6 +60,11 @@ main{margin-top:calc(var(--header-height) + 8px)}
 /* About */
 .about{padding:70px 0;background:#fff}
 .about-grid{display:grid;grid-template-columns:1fr minmax(0,320px);gap:30px;align-items:start}
+/* Layout: left column contains photo + text, right column contains stats */
+.about-left{display:flex;gap:20px;align-items:flex-start}
+.about-left .about-text{flex:1}
+.about-photo{flex:0 0 160px}
+.about-photo img{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid rgba(0,0,0,0.06);box-shadow:0 8px 24px rgba(16,24,40,0.08);background:#fff}
 .about h2{margin-top:0;font-size:1.9rem}
 .about p{color:var(--muted);line-height:1.6}
 .about-stats{display:flex;flex-direction:column;gap:18px;align-items:center;justify-content:flex-start}
@@ -149,6 +154,8 @@ footer{padding:26px 0;background:linear-gradient(135deg,var(--brand-dark),#34495
     .lead{font-size:1.05rem}
     .about-grid{grid-template-columns:1fr minmax(0,220px)}
     .about-stats{flex-direction:row;gap:12px}
+    .about-photo{flex:0 0 140px}
+    .about-photo img{width:140px;height:140px}
     .stat{flex:1;min-width:0}
     .contact-grid{grid-template-columns:1fr 420px}
     .gallery{gap:18px}
@@ -157,6 +164,13 @@ footer{padding:26px 0;background:linear-gradient(135deg,var(--brand-dark),#34495
     .hero h2{font-size:1.5rem}
     .placeholder.large{height:180px}
     .lightbox-image{height:320px}
+}
+
+/* Stack photo and text on small screens */
+@media (max-width:900px){
+    .about-left{flex-direction:column;align-items:flex-start}
+    .about-photo{flex:0 0 auto}
+    .about-photo img{width:120px;height:120px}
 }
 
 /* Adjust gallery image heights for small screens to avoid large vertical space and overlap */
