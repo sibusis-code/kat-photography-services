@@ -22,6 +22,9 @@ body{
     -webkit-font-smoothing:antialiased;
 }
 
+/* Prevent accidental horizontal overflow on small screens */
+html, body {overflow-x: hidden;}
+
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 
 /* Header */
@@ -126,7 +129,7 @@ footer{padding:26px 0;background:linear-gradient(135deg,var(--brand-dark),#34495
     main{margin-top:72px}
     /* mobile nav overlay styling when active */
     nav ul.active{
-        position:absolute;left:0;right:0;top:58px;background:linear-gradient(180deg,rgba(44,62,80,0.98),#283744);padding:12px 20px;box-shadow:0 8px 30px rgba(0,0,0,0.25);border-radius:0;margin:0
+        position:absolute;left:0;right:0;top:calc(var(--header-height));background:linear-gradient(180deg,rgba(44,62,80,0.98),#283744);padding:12px 20px;box-shadow:0 8px 30px rgba(0,0,0,0.25);border-radius:0;margin:0;z-index:1300;
     }
     nav ul.active li{margin:0}
     nav ul.active a{display:block;padding:14px 10px;font-size:1.05rem}
@@ -147,6 +150,23 @@ footer{padding:26px 0;background:linear-gradient(135deg,var(--brand-dark),#34495
     .hero h2{font-size:1.5rem}
     .placeholder.large{height:180px}
     .lightbox-image{height:320px}
+}
+
+/* Adjust gallery image heights for small screens to avoid large vertical space and overlap */
+@media (max-width:480px){
+    .photo img{height:160px}
+}
+@media (max-width:360px){
+    .photo img{height:140px}
+}
+
+/* Ensure lightbox fits within small viewports */
+@media (max-width:700px){
+    .lightbox-image{height:60vh}
+    .lightbox-content{padding:10px}
+}
+@media (max-width:420px){
+    .lightbox-image{height:50vh}
 }
 
 /* Small-screen polish */
